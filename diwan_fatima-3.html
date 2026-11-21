@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171426">
+<title>ما لم تقله الكلمات | ديوان فاطمة الزهراء</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap');
+:root{--ink:#f7f0e7;--muted:#c9b9c8;--gold:#d8b77a;--rose:#d8899d;--night:#171426;--panel:#211d35}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 15%,#3b294a 0,transparent 34%),radial-gradient(ellipse at 12% 70%,#30223b 0,transparent 30%),var(--night);color:var(--ink);font-family:'Cairo',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 15% 20%,#fff8 99%,transparent),radial-gradient(1px 1px at 70% 35%,#fff9 99%,transparent),radial-gradient(2px 2px at 48% 80%,#d8b77a88 99%,transparent),radial-gradient(1px 1px at 88% 65%,#fff8 99%,transparent);background-size:230px 220px,310px 260px,400px 330px,270px 290px;opacity:.65;z-index:-1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px clamp(20px,7vw,90px);gap:20px}.brand{font-family:Amiri,serif;color:var(--gold);font-size:1.35rem}.links{display:flex;gap:24px}.links a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:.25s}.links a:hover{color:var(--gold)}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:55px 20px 90px;position:relative}.moon{position:absolute;width:125px;height:125px;border-radius:50%;box-shadow:-18px 14px 0 0 var(--gold);opacity:.8;top:13%;left:18%;transform:rotate(-20deg);animation:float 7s ease-in-out infinite}
+.kicker{color:var(--rose);letter-spacing:3px;font-size:.85rem;animation:fade 1.2s both}.hero h1{font:clamp(3rem,8vw,6.8rem)/1.3 Amiri,serif;margin:15px 0;color:#fff4e8;text-shadow:0 0 35px #d8899d28;animation:rise 1.2s .2s both}.hero p{font:clamp(1.15rem,2.4vw,1.65rem)/2 Amiri,serif;color:var(--muted);max-width:750px;margin:0 auto 28px;animation:rise 1.2s .4s both}.btn{display:inline-block;border:1px solid #d8b77a77;color:var(--gold);padding:12px 28px;border-radius:40px;text-decoration:none;transition:.3s;animation:rise 1.2s .6s both}.btn:hover{background:var(--gold);color:var(--night);box-shadow:0 0 25px #d8b77a35}
+section{padding:75px clamp(20px,8vw,110px)}.section-title{text-align:center;font:2.5rem Amiri,serif;color:var(--gold);margin:0 0 12px}.sub{text-align:center;color:var(--muted);margin:0 auto 42px}
+.poem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px}.poem{background:linear-gradient(145deg,#29223cdd,#1d1a2ddd);border:1px solid #d8b77a20;border-radius:22px;padding:30px;position:relative;overflow:hidden;transition:transform .3s,border .3s}.poem:hover{transform:translateY(-7px);border-color:#d8b77a66}.poem:after{content:"❧";position:absolute;bottom:-15px;left:16px;color:#d8899d22;font:5rem Amiri}.poem h3{font:1.8rem Amiri,serif;color:var(--rose);margin:0 0 14px}.poem p{font:1.3rem/2 Amiri,serif;color:#f1e6e2;white-space:pre-line;margin:0}.tag{font-size:.75rem;color:var(--gold);margin-top:20px;display:block}
+.about{max-width:760px;margin:auto;text-align:center;border-top:1px solid #d8b77a22;border-bottom:1px solid #d8b77a22;padding:45px 20px}.about p{font:1.45rem/2.2 Amiri,serif;color:var(--muted)}.signature{font:2rem Amiri,serif;color:var(--rose);margin-top:20px}
+footer{text-align:center;padding:35px 20px;color:#94869c;font-size:.85rem}footer span{color:var(--rose)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes float{50%{transform:translateY(-12px) rotate(-20deg)}}
+@media(max-width:600px){nav{padding:18px 20px}.links{gap:12px}.links a{font-size:.78rem}.moon{width:75px;height:75px;top:12%;left:10%}.hero{min-height:70vh}}
+</style>
+
+<style>
+.poem{cursor:pointer}.poem:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.poem .open-hint{display:inline-block;margin-top:18px;color:var(--gold);font-size:.85rem}
+#poemModal{width:min(90%,650px);border:1px solid #d8b77a66;border-radius:24px;background:#211d35;color:var(--ink);padding:35px;box-shadow:0 25px 100px #0009}
+#poemModal::backdrop{background:#090711c9;backdrop-filter:blur(5px)}
+#poemModal h2{font:2.3rem Amiri,serif;color:var(--rose);margin-top:0}
+#poemModal #fullPoem{font:1.5rem/2.2 Amiri,serif;white-space:pre-line;color:#f1e6e2}
+#poemModal .close{border:1px solid #d8b77a77;background:transparent;color:var(--gold);border-radius:25px;padding:9px 22px;font:inherit;cursor:pointer}
+</style>
+
+</head>
+<body>
+<nav><div class="brand">ديوان فاطمة الزهراء</div><div class="links"><a href="#diwan">الديوان</a><a href="#thoughts">خواطر</a><a href="#about">عن الكاتبة</a></div></nav>
+<header class="hero"><div class="moon"></div><div><div class="kicker">مساحةٌ لما يسكن القلب</div><h1>ما لم تقله الكلمات</h1><p>هنا تُترك القصائد على عتبة الروح،<br>وتجد المشاعر لغةً تشبهها.</p><a class="btn" href="#diwan">ادخل إلى الديوان　✧</a></div></header>
+
+<style>
+.studio{padding:70px 7%;position:relative;overflow:hidden}
+.studio:before{content:"";position:absolute;inset:10% -10% auto auto;width:340px;height:340px;border-radius:50%;background:#bd7caa12;filter:blur(55px);pointer-events:none}
+.studio-head{text-align:center;max-width:720px;margin:0 auto 34px}
+.studio-head .kicker{color:#d8b77a;letter-spacing:2px}
+.studio-head h2{font:clamp(2.1rem,5vw,3.5rem) Amiri,serif;margin:10px 0;color:#f1d9e8}
+.studio-head p{color:#c8bfd6;line-height:2}
+.studio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1050px;margin:auto}
+.studio-tile{border:1px solid #d8b77a35;border-radius:22px;padding:25px;background:linear-gradient(145deg,#ffffff08,#bd7caa08);backdrop-filter:blur(8px);transition:transform .3s,border-color .3s}
+.studio-tile:hover{transform:translateY(-5px);border-color:#d8b77a99}
+.studio-icon{font-size:2rem;display:block;margin-bottom:12px}
+.studio-tile h3{font:1.55rem Amiri,serif;color:#e5c58c;margin:0 0 8px}
+.studio-tile p{color:#c9bfd2;line-height:1.9;margin:0}
+.studio-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.studio-action{border:1px solid #d8b77a77;border-radius:28px;padding:11px 23px;background:#d8b77a;color:#241c31;font:inherit;font-weight:bold;cursor:pointer;text-decoration:none}
+.studio-action.secondary{background:transparent;color:#e8d8ef}
+#studioInfo{width:min(90%,480px);border:1px solid #d8b77a66;border-radius:22px;background:#211d35;color:#f5e9e5;padding:25px}
+#studioInfo::backdrop{background:#090711c9;backdrop-filter:blur(5px)}
+#studioInfo h3{font:2rem Amiri,serif;color:#e6a0b2;margin-top:0}
+@media(max-width:600px){.studio{padding:50px 5%}.studio-tile{padding:20px}}
+</style>
+<section class="studio" id="poet-studio">
+  <div class="studio-head">
+    <div class="kicker">من ديوانٍ واحد إلى مجتمعٍ كامل</div>
+    <h2>استوديو الشعراء</h2>
+    <p>مساحة تجمع أصحاب الحروف؛ ينشرون قصائدهم، يتبادلون الرأي، ويتعلّمون من بعضهم في رفقة أدبية محترمة.</p>
+  </div>
+  <div class="studio-grid">
+    <article class="studio-tile"><span class="studio-icon">✒️</span><h3>لكل شاعر ديوانه</h3><p>صفحة أدبية تحمل اسمك، نبذتك، وقصائدك التي تختار مشاركتها.</p></article>
+    <article class="studio-tile"><span class="studio-icon">📜</span><h3>ساحة القصائد</h3><p>تعرّف على نصوص الشعراء، اقرأها، واترك تعليقًا يضيف إلى القصيدة.</p></article>
+    <article class="studio-tile"><span class="studio-icon">💬</span><h3>مجلس الحروف</h3><p>دردشة ونقاشات أدبية تجمع الأعضاء في مساحة آمنة ومحترمة.</p></article>
+    <article class="studio-tile"><span class="studio-icon">🪶</span><h3>ورشة الكتابة</h3><p>شارك نصك طلبًا للمراجعة، وتبادل الملاحظات بلطف وموضوعية.</p></article>
+  </div>
+  <div class="studio-actions">
+    <button class="studio-action" id="studioJoin">إنشاء حساب شاعر</button>
+    <button class="studio-action secondary" id="studioLogin">تسجيل الدخول</button>
+    <a class="studio-action secondary" href="#diwan">زيارة الديوان الحالي</a>
+  </div>
+</section>
+<dialog id="studioInfo">
+  <h3 id="studioInfoTitle">خطوة قريبة</h3>
+  <p id="studioInfoText" style="line-height:2;color:#d6c9df"></p>
+  <button class="studio-action" id="closeStudioInfo">تمام</button>
+</dialog>
+<script>
+(() => {
+ const d=document.getElementById('studioInfo');
+ document.getElementById('studioJoin').addEventListener('click',()=>{
+  document.getElementById('studioInfoTitle').textContent='إنشاء حساب شاعر';
+  document.getElementById('studioInfoText').textContent='جهّزنا مكان إنشاء الحساب في التصميم. في المرحلة التالية سنربطه بنظام آمن حتى يُحفظ حسابك وديوانك على الإنترنت، ويكون لك اسم دخول خاص.';
+  d.showModal();
+ });
+ document.getElementById('studioLogin').addEventListener('click',()=>{
+  document.getElementById('studioInfoTitle').textContent='تسجيل الدخول';
+  document.getElementById('studioInfoText').textContent='واجهة الدخول أصبحت جزءًا من التصميم. سنفعّلها بعد ربط الموقع بخدمة الحسابات، حتى لا نضع بيانات دخول وهمية أو غير آمنة.';
+  d.showModal();
+ });
+ document.getElementById('closeStudioInfo').addEventListener('click',()=>d.close());
+})();
+</script>
+
+<section id="diwan"><h2 class="section-title">من الديوان</h2><p class="sub">قصائد كُتبت حين ضاق الصمت عن حملها</p><div class="poem-grid">
+<article class="poem"><h3>على ساحل الأحزان</h3><p>على ساحلِ الأحزانِ والناسُ نيامُ…</p><span class="tag">قصيدة · من كتاباتك</span><span class="open-hint">اقرئي القصيدة كاملة ←</span></article>
+<article class="poem"><h3>وترٌ في القلب</h3><p>بعضُ الكلامِ إذا خبّأتُهُ كَبُرَ،
+حتى غدا في حنايا الروحِ أشعارا.</p><span class="tag">قصيدة · مساحة قابلة للتعديل</span><span class="open-hint">اقرئي القصيدة كاملة ←</span></article>
+<article class="poem"><h3>إلى ما لا يُقال</h3><p>وللصمتِ أبوابٌ إذا ما طرقتُها،
+أجابَ فؤادي… واستراحَ حنيني.</p><span class="tag">قصيدة · مساحة قابلة للتعديل</span><span class="open-hint">اقرئي القصيدة كاملة ←</span></article>
+</div></section>
+
+<style>
+.add-poem-wrap{display:flex;justify-content:center;margin:28px 0 8px}
+.add-poem-btn,.save-poem-btn{border:1px solid #d8b77a88;background:linear-gradient(135deg,#d8b77a,#b88758);color:#20192c;border-radius:30px;padding:12px 25px;font:inherit;font-weight:700;cursor:pointer}
+#addPoemDialog{width:min(92%,620px);border:1px solid #d8b77a66;border-radius:24px;background:#211d35;color:#f5e9e5;padding:26px;box-shadow:0 25px 100px #0009}
+#addPoemDialog::backdrop{background:#090711c9;backdrop-filter:blur(5px)}
+#addPoemDialog h2{font:2rem Amiri,serif;color:#e6a0b2;margin-top:0}
+#addPoemDialog label{display:block;margin:14px 0 7px;color:#d8b77a}
+#addPoemDialog input,#addPoemDialog textarea{box-sizing:border-box;width:100%;background:#171426;color:#fff;border:1px solid #d8b77a44;border-radius:12px;padding:12px;font:1.1rem Cairo, sans-serif}
+#addPoemDialog textarea{min-height:190px;resize:vertical;line-height:1.9}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.cancel-poem{border:1px solid #d8b77a66;background:transparent;color:#d8b77a;border-radius:25px;padding:10px 20px;cursor:pointer;font:inherit}
+</style>
+<div class="add-poem-wrap"><button class="add-poem-btn" id="showAddPoem">＋ أضيفي قصيدة إلى ديوانك</button></div>
+<dialog id="addPoemDialog">
+  <h2>قصيدة جديدة</h2>
+  <form id="newPoemForm">
+    <label for="newPoemTitle">عنوان القصيدة</label>
+    <input id="newPoemTitle" maxlength="100" required placeholder="اكتبي عنوان قصيدتك">
+    <label for="newPoemText">نص القصيدة</label>
+    <textarea id="newPoemText" required placeholder="اكتبي أبياتك هنا..."></textarea>
+    <div class="form-actions">
+      <button class="save-poem-btn" type="submit">حفظ القصيدة</button>
+      <button class="cancel-poem" type="button" id="cancelAddPoem">إلغاء</button>
+    </div>
+    <p style="font-size:.85rem;color:#c8b9cf">تحفظ القصائد على هذا المتصفح والجهاز فقط في هذه النسخة.</p>
+  </form>
+</dialog>
+<script>
+(() => {
+  const grid = document.querySelector('.poem-grid');
+  const addDialog = document.getElementById('addPoemDialog');
+  const form = document.getElementById('newPoemForm');
+  const storageKey = 'fatima_diwan_user_poems_v1';
+
+  function makeCard(title, text, saved = false) {
+    const card = document.createElement('article');
+    card.className = 'poem';
+    const heading = document.createElement('h3'); heading.textContent = title;
+    const body = document.createElement('p'); body.textContent = text;
+    const tag = document.createElement('span'); tag.className = 'tag';
+    tag.textContent = saved ? 'قصيدة · من إضافاتك' : 'قصيدة';
+    const hint = document.createElement('span'); hint.className = 'open-hint';
+    hint.textContent = 'اقرئي القصيدة كاملة ←';
+    card.append(heading, body, tag, hint);
+    card.setAttribute('tabindex','0'); card.setAttribute('role','button');
+    const open = () => {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('fullPoem').textContent = text;
+      document.getElementById('poemModal').showModal();
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){e.preventDefault();open();}
+    });
+    return card;
+  }
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    saved.forEach(poem => grid.appendChild(makeCard(poem.title, poem.text, true)));
+  } catch(e) {}
+
+  document.getElementById('showAddPoem').addEventListener('click', () => addDialog.showModal());
+  document.getElementById('cancelAddPoem').addEventListener('click', () => addDialog.close());
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const title = document.getElementById('newPoemTitle').value.trim();
+    const text = document.getElementById('newPoemText').value.trim();
+    if(!title || !text) return;
+    const poem = {title, text};
+    let saved = [];
+    try { saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch(e) {}
+    saved.push(poem);
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+      grid.appendChild(makeCard(title, text, true));
+      form.reset();
+      addDialog.close();
+    } catch(e) {
+      alert('المتصفح لم يسمح بالحفظ. جرّبي فتح الملف في متصفحك المعتاد.');
+    }
+  });
+})();
+</script>
+
+<section id="thoughts"><h2 class="section-title">خواطر عابرة</h2><p class="sub">سطرٌ صغير، قد يتّسع لعالمٍ كامل</p><div class="about"><p>«ليس كلُّ ما في القلبِ يُقال؛<br>بعضُهُ يُكتب، وبعضُهُ يصيرُ قصيدة.»</p></div></section>
+<section id="about"><h2 class="section-title">عن الكاتبة</h2><div class="about"><p>أنا فاطمة الزهراء، أكتبُ ما تعجزُ اللحظةُ عن الاحتفاظِ به،<br>وأجمعُ في هذا الديوانِ شيئًا من روحي…<br>لعلَّ الكلماتِ تُنصتُ يومًا لمن لم يسمعها.</p><div class="signature">فاطمة الزهراء</div></div></section>
+<footer>صُنع بحبٍّ للكلمات <span>✦</span> © فاطمة الزهراء</footer>
+
+<dialog id="poemModal" aria-labelledby="modalTitle">
+  <h2 id="modalTitle"></h2>
+  <div id="fullPoem"></div>
+  <p class="signature">فاطمة الزهراء</p>
+  <button class="close" id="closeModal">عودة إلى الديوان</button>
+</dialog>
+<script>
+const modal = document.getElementById('poemModal');
+document.querySelectorAll('.poem').forEach(card => {
+  card.setAttribute('tabindex','0');
+  card.setAttribute('role','button');
+  const open = () => {
+    document.getElementById('modalTitle').textContent = card.querySelector('h3').textContent;
+    document.getElementById('fullPoem').textContent = card.querySelector('p').textContent;
+    modal.showModal();
+  };
+  card.addEventListener('click', open);
+  card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){e.preventDefault();open();} });
+});
+document.getElementById('closeModal').addEventListener('click', () => modal.close());
+modal.addEventListener('click', e => { if(e.target === modal) modal.close(); });
+</script>
+</body></html>
